@@ -6,7 +6,8 @@
     "clean": "rm -rf ./dist",
     "build": "parcel build index.html --public-url '.'",
     "start": "parcel index.html",
-    "test": "test-ipfs-example"
+    "test": "test-ipfs-example",
+    "ipfs": "ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"*\"]'"
   },
   "author": "Harlan T Wood <code@harlantwood.net>",
   "contributors": [

@@ -53305,22 +53305,7 @@ Object.assign(ipfsClient, {
   urlSource
 });
 module.exports = ipfsClient;
-},{"buffer":"node_modules/node-libs-browser/node_modules/buffer/index.js","cids":"node_modules/cids/src/index.js","multiaddr":"node_modules/multiaddr/src/index.js","multibase":"node_modules/multibase/src/index.js","multicodec":"node_modules/multicodec/src/index.js","multihashes":"node_modules/multihashes/src/index.js","ipfs-utils/src/files/glob-source":"node_modules/parcel-bundler/src/builtins/_empty.js","ipfs-utils/src/files/url-source":"node_modules/ipfs-utils/src/files/url-source.js","./add":"node_modules/ipfs-http-client/src/add.js","./add-all":"node_modules/ipfs-http-client/src/add-all.js","./bitswap":"node_modules/ipfs-http-client/src/bitswap/index.js","./block":"node_modules/ipfs-http-client/src/block/index.js","./bootstrap":"node_modules/ipfs-http-client/src/bootstrap/index.js","./cat":"node_modules/ipfs-http-client/src/cat.js","./commands":"node_modules/ipfs-http-client/src/commands.js","./config":"node_modules/ipfs-http-client/src/config/index.js","./dag":"node_modules/ipfs-http-client/src/dag/index.js","./dht":"node_modules/ipfs-http-client/src/dht/index.js","./diag":"node_modules/ipfs-http-client/src/diag/index.js","./dns":"node_modules/ipfs-http-client/src/dns.js","./files":"node_modules/ipfs-http-client/src/files/index.js","./get":"node_modules/ipfs-http-client/src/get.js","./get-endpoint-config":"node_modules/ipfs-http-client/src/get-endpoint-config.js","./id":"node_modules/ipfs-http-client/src/id.js","./key":"node_modules/ipfs-http-client/src/key/index.js","./log":"node_modules/ipfs-http-client/src/log/index.js","./ls":"node_modules/ipfs-http-client/src/ls.js","./mount":"node_modules/ipfs-http-client/src/mount.js","./name":"node_modules/ipfs-http-client/src/name/index.js","./object":"node_modules/ipfs-http-client/src/object/index.js","./pin":"node_modules/ipfs-http-client/src/pin/index.js","./ping":"node_modules/ipfs-http-client/src/ping.js","./pubsub":"node_modules/ipfs-http-client/src/pubsub/index.js","./refs":"node_modules/ipfs-http-client/src/refs/index.js","./repo":"node_modules/ipfs-http-client/src/repo/index.js","./resolve":"node_modules/ipfs-http-client/src/resolve.js","./stats":"node_modules/ipfs-http-client/src/stats/index.js","./stop":"node_modules/ipfs-http-client/src/stop.js","./swarm":"node_modules/ipfs-http-client/src/swarm/index.js","./version":"node_modules/ipfs-http-client/src/version.js"}],"node_modules/it-all/index.js":[function(require,module,exports) {
-'use strict'
-
-const all = async (iterator) => {
-  const arr = []
-
-  for await (const entry of iterator) {
-    arr.push(entry)
-  }
-
-  return arr
-}
-
-module.exports = all
-
-},{}],"src/App.js":[function(require,module,exports) {
+},{"buffer":"node_modules/node-libs-browser/node_modules/buffer/index.js","cids":"node_modules/cids/src/index.js","multiaddr":"node_modules/multiaddr/src/index.js","multibase":"node_modules/multibase/src/index.js","multicodec":"node_modules/multicodec/src/index.js","multihashes":"node_modules/multihashes/src/index.js","ipfs-utils/src/files/glob-source":"node_modules/parcel-bundler/src/builtins/_empty.js","ipfs-utils/src/files/url-source":"node_modules/ipfs-utils/src/files/url-source.js","./add":"node_modules/ipfs-http-client/src/add.js","./add-all":"node_modules/ipfs-http-client/src/add-all.js","./bitswap":"node_modules/ipfs-http-client/src/bitswap/index.js","./block":"node_modules/ipfs-http-client/src/block/index.js","./bootstrap":"node_modules/ipfs-http-client/src/bootstrap/index.js","./cat":"node_modules/ipfs-http-client/src/cat.js","./commands":"node_modules/ipfs-http-client/src/commands.js","./config":"node_modules/ipfs-http-client/src/config/index.js","./dag":"node_modules/ipfs-http-client/src/dag/index.js","./dht":"node_modules/ipfs-http-client/src/dht/index.js","./diag":"node_modules/ipfs-http-client/src/diag/index.js","./dns":"node_modules/ipfs-http-client/src/dns.js","./files":"node_modules/ipfs-http-client/src/files/index.js","./get":"node_modules/ipfs-http-client/src/get.js","./get-endpoint-config":"node_modules/ipfs-http-client/src/get-endpoint-config.js","./id":"node_modules/ipfs-http-client/src/id.js","./key":"node_modules/ipfs-http-client/src/key/index.js","./log":"node_modules/ipfs-http-client/src/log/index.js","./ls":"node_modules/ipfs-http-client/src/ls.js","./mount":"node_modules/ipfs-http-client/src/mount.js","./name":"node_modules/ipfs-http-client/src/name/index.js","./object":"node_modules/ipfs-http-client/src/object/index.js","./pin":"node_modules/ipfs-http-client/src/pin/index.js","./ping":"node_modules/ipfs-http-client/src/ping.js","./pubsub":"node_modules/ipfs-http-client/src/pubsub/index.js","./refs":"node_modules/ipfs-http-client/src/refs/index.js","./repo":"node_modules/ipfs-http-client/src/repo/index.js","./resolve":"node_modules/ipfs-http-client/src/resolve.js","./stats":"node_modules/ipfs-http-client/src/stats/index.js","./stop":"node_modules/ipfs-http-client/src/stop.js","./swarm":"node_modules/ipfs-http-client/src/swarm/index.js","./version":"node_modules/ipfs-http-client/src/version.js"}],"src/App.js":[function(require,module,exports) {
 /* eslint-disable no-console */
 'use strict';
 
@@ -53328,35 +53313,7 @@ const React = require('react');
 
 const ipfsClient = require('ipfs-http-client');
 
-const all = require('it-all');
-
-const CID = require('cids');
-
 const BufferList = require('bl/BufferList');
-/*class frame extends React.Component{
-  render(){
-    return(
-      <iframe id="myframe" src = {'https://ipfs.io/ipfs/' + this.props.search_file_hash} ></iframe>
-    )
-  }
-}*/
-
-/*const Component = React.createClass({
-  iframe: function () {
-    return {
-      __html: this.props.iframe
-    }
-  },
-
-  render: function() {
-    return (
-      <div>
-        <div dangerouslySetInnerHTML={ this.iframe() } />
-      </div>
-    );
-  }
-});*/
-
 
 class App extends React.Component {
   constructor() {
@@ -53379,12 +53336,7 @@ class App extends React.Component {
   captureFile(event) {
     event.stopPropagation();
     event.preventDefault();
-
-    if (document.getElementById('keep-filename').checked) {
-      this.saveToIpfsWithFilename(event.target.files);
-    } else {
-      this.saveToIpfs(event.target.files);
-    }
+    this.saveToIpfs(event.target.files);
   } // Example #1
   // Add file to IPFS and return a CID
 
@@ -53394,37 +53346,6 @@ class App extends React.Component {
       const added = await this.state.ipfs.add(file, {
         progress: prog => console.log(`received: ${prog}`)
       });
-      console.log(added);
-      this.setState({
-        added_file_hash: added.cid.toString()
-      });
-      /*const validCID = 'QmYoaPrdSpKKhysvS1teMsaAeC2qekuMZ84h8j71mAJDJD'
-       this.state.ipfs.get(validCID, function (err, files) {
-        console.log("hi! I'm in!")
-        files.forEach((file) => {
-          console.log(file.path)
-          console.log("File content >> ",file.content.toString('utf8'))
-        })
-      })*/
-    } catch (err) {
-      console.error(err);
-    }
-  } // Example #2
-  // Add file to IPFS and wrap it in a directory to keep the original filename
-
-
-  async saveToIpfsWithFilename([file]) {
-    const fileDetails = {
-      path: file.name,
-      content: file
-    };
-    const options = {
-      wrapWithDirectory: true,
-      progress: prog => console.log(`received: ${prog}`)
-    };
-
-    try {
-      const added = await this.state.ipfs.add(fileDetails, options);
       console.log(added);
       this.setState({
         added_file_hash: added.cid.toString()
@@ -53446,15 +53367,7 @@ class App extends React.Component {
   }
 
   async search() {
-    const inpVal = this.input.value; //console.log(inpVal)
-
-    /*try{
-      const res = await all(this.state.ipfs.get(inpVal) )
-      console.log(res)
-    } catch (err) {
-      console.error(err)
-    }*/
-    //const cid = 'QmY9rBbbecaLXgTkHFM9zzv3Bf2fsYDFZatjj1zhP7BboA'
+    const inpVal = this.input.value;
 
     for await (const file of this.state.ipfs.get(inpVal)) {
       console.log(file.path);
@@ -53479,8 +53392,7 @@ class App extends React.Component {
   render() {
     var iFrame = this.state.isIFrameDisplayed ? /*#__PURE__*/React.createElement("iframe", {
       src: 'https://ipfs.io/ipfs/' + this.state.search_file_hash
-    }) : ''; //if (this.state.ipfs) {
-
+    }) : '';
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, " Upload File "), /*#__PURE__*/React.createElement("form", {
       id: "capture-media",
       onSubmit: this.handleSubmit
@@ -53503,22 +53415,13 @@ class App extends React.Component {
       id: "gateway-link",
       target: "_blank",
       href: 'https://ipfs.io/ipfs/' + this.state.search_file_hash
-    }, this.state.search_file_hash)), iFrame); //}
-    //return (
-    //<div style={{ textAlign: 'center' }}>
-    //<h1>Enter the multiaddr for an IPFS node HTTP API</h1>
-    //<form>
-    //<input id="connect-input" type="text" defaultValue="/ip4/127.0.0.1/tcp/5001" ref={this.multiaddr} />
-    //<input id="connect-submit" type="button" value="Connect" onClick={this.connect} />
-    //</form>
-    //</div>
-    //)
+    }, this.state.search_file_hash)), iFrame);
   }
 
 }
 
 module.exports = App;
-},{"react":"node_modules/react/index.js","ipfs-http-client":"node_modules/ipfs-http-client/src/index.js","it-all":"node_modules/it-all/index.js","cids":"node_modules/cids/src/index.js","bl/BufferList":"node_modules/bl/BufferList.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","ipfs-http-client":"node_modules/ipfs-http-client/src/index.js","bl/BufferList":"node_modules/bl/BufferList.js"}],"src/index.js":[function(require,module,exports) {
 /* eslint-disable no-unused-vars */
 'use strict';
 
@@ -53557,7 +53460,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50864" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52472" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
